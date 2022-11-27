@@ -17,14 +17,5 @@ BOOTMAGIC_ENABLE		= yes
 MOUSEKEY_ENABLE			= yes
 EXTRAKEY_ENABLE			= yes
 
-DEFERRED_EXEC_ENABLE = yes
-SRC += matrix.c
-
-QUANTUM_LIB_SRC += spi_master.c
-CUSTOM_MATRIX = lite
-
-ifeq ($(strip $(TRACKPAD_ENABLE)), yes)
-	POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
-	POINTING_DEVICE_ENABLE = yes
-	OPT_DEFTS += -DTRACKPAD_ENABLED
-endif
+SPLIT_KEYBOARD 			= yes
+SERIAL_DRIVER 			= vendor
