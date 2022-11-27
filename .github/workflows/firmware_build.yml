@@ -15,7 +15,10 @@ jobs:
       matrix: 
         board: [
           "jasonhazel/bad_wings:default",
-          "jasonhazel/dust:default"
+          "jasonhazel/dust:default",
+          "jasonhazel/satpad:default",
+          "jasonhazel/glitch:default",
+          "jasonhazel/crepe:default"
         ]
     steps:
       - name: Checkout QMK
