@@ -13,12 +13,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix: 
-        - keyboard: bad_wings
-          maintainer: jasonhazel
-          keymap: default
-        - keyboard: dust
-          maintainer: jasonhazel
-          keymap: default
+        board: [
+          jasonhazel/bad_wings:default,
+          jasonhazel/dust:default
+        ]
     steps:
       - name: Checkout QMK
         uses: actions/checkout@v3
@@ -31,7 +29,7 @@ jobs:
       - name: Build firmware
         run: |
           
-          make ${{ matrix.maintainer}}/${{ matrix.keyboard}}:${{ matrix.keymap }}
+          make ${{ matrix.board }}
 
       - name: Archive firmware
         uses: actions/upload-artifact@v3
