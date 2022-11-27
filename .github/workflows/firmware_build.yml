@@ -1,0 +1,51 @@
+name: Build QMK firmware
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'develop**'
+    #paths:
+    #  - 'keyboards/fingerpunch/*'
+jobs:
+
+  Build:
+    runs-on: ubuntu-latest
+    container: qmkfm/qmk_cli
+    strategy:
+      fail-fast: false
+      #matrix:
+      #  keyboard: [ ffkb_byomcu ]
+    steps:
+      - name: Checkout QMK
+        uses: actions/checkout@v3
+        with:
+          # change this to your repo
+          repository: jasonhazel/qmk_hazel
+          submodules: recursive
+
+      #- name: Checkout userspace
+      #  uses: actions/checkout@v3
+      #  with:
+      #    path: users/default
+      
+      #- name: Finding files and store to output
+      #  id: finding-files
+      #  run: |
+      #    echo "::set-output name=FILELIST::$(qmk list-keyboards| grep fingerpunch)"
+      
+      - name: Build firmware
+        run: |
+          
+          make jasonhazel/bad_wings:default
+
+      - name: Archive firmware
+        uses: actions/upload-artifact@v3
+        continue-on-error: true
+        with:
+          name: ${{ matrix.file }}_${{ github.actor }}
+          path: |
+            *.hex
+            *.bin
+            *.uf2
+
