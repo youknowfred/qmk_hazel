@@ -1,0 +1,39 @@
+name: Build QMK firmware
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'develop**'
+jobs:
+
+  Build:
+    runs-on: ubuntu-latest
+    container: qmkfm/qmk_cli
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout QMK
+        uses: actions/checkout@v3
+        with:
+          # change this to your repo
+          repository: jasonhazel/qmk_hazel
+          submodules: recursive
+
+      
+      - name: Build firmware
+        run: |
+          
+          make jasonhazel/bad_wings:default
+
+      - name: Archive firmware
+        uses: actions/upload-artifact@v3
+        continue-on-error: true
+        with:
+          name: ${{ matrix.file }}_${{ github.actor }}
+          path: |
+            *.hex
+            *.bin
+            *.uf2
+
