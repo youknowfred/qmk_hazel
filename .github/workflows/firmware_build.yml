@@ -5,8 +5,6 @@ on:
       - main
       - master
       - 'develop**'
-    #paths:
-    #  - 'keyboards/fingerpunch/*'
 jobs:
 
   Build:
@@ -14,8 +12,7 @@ jobs:
     container: qmkfm/qmk_cli
     strategy:
       fail-fast: false
-      #matrix:
-      #  keyboard: [ ffkb_byomcu ]
+
     steps:
       - name: Checkout QMK
         uses: actions/checkout@v3
@@ -24,15 +21,6 @@ jobs:
           repository: jasonhazel/qmk_hazel
           submodules: recursive
 
-      #- name: Checkout userspace
-      #  uses: actions/checkout@v3
-      #  with:
-      #    path: users/default
-      
-      #- name: Finding files and store to output
-      #  id: finding-files
-      #  run: |
-      #    echo "::set-output name=FILELIST::$(qmk list-keyboards| grep fingerpunch)"
       
       - name: Build firmware
         run: |
