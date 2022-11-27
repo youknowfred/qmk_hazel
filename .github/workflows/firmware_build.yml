@@ -14,8 +14,8 @@ jobs:
       fail-fast: false
       matrix: 
         board: [
-          jasonhazel/bad_wings:default,
-          jasonhazel/dust:default
+          "jasonhazel/bad_wings:default",
+          "jasonhazel/dust:default"
         ]
     steps:
       - name: Checkout QMK
