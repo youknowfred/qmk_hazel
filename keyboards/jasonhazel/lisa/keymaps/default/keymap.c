@@ -5,27 +5,6 @@ enum lisa_layers {
   LAYER_LENGTH
 };
 
-enum lisa_combos {
-  COMBO_LENGTH
-};
-
-enum lisa_tapdances {
-  TAPDANCE_LENGTH
-};
-
-uint16_t COMBO_LEN = COMBO_LENGTH;
-combo_t key_combos[] = {
-  NULL
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-  NULL
-};
-
-const key_override_t **key_overrides = (const key_override_t *[]) {
-  NULL
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMPAD] = LAYOUT(
     KC_ESC,   KC_BSPC,  KC_BSLS,  KC_ASTR,

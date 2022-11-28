@@ -2,12 +2,6 @@
 
 #include "config_common.h"
 
-#define DEVICE_VER		0x0001
-#define VENDOR_ID		  0x4A48 // JH
-#define PRODUCT_ID		0x4350 // cp
-
-#define MANUFACTURER    jasonhazel
-#define PRODUCT         CREPE
 
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 5

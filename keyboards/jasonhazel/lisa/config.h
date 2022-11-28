@@ -2,13 +2,6 @@
 
 #include "config_common.h"
 
-#define DEVICE_VER              0x0001
-#define VENDOR_ID               0x4A48
-#define PRODUCT_ID              0x4C50
-
-#define MANUFACTURER            jasonhazel
-#define PRODUCT                 Lisa
-
 #define MATRIX_ROWS             5
 #define MATRIX_COLS             4
 
