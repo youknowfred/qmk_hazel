@@ -21,7 +21,8 @@ jobs:
           "jasonhazel/dust:default",
           "jasonhazel/satpad:default",
           "jasonhazel/glitch:default",
-          "jasonhazel/crepe:default"
+          "jasonhazel/crepe:default",
+          "jasonhazel/lisa:default"
         ]
     steps:
       - name: Checkout QMK
