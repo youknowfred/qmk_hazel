@@ -2,12 +2,10 @@ name: Build QMK firmware
 on:
   push:
     paths:
-      - 'keyboards/jasonhazel/**'
-      - '.github/workflows/firmware_build.yml'
-    # branches:
-    #   - main
-    #   - master
-    #   - 'develop**'
+    branches:
+      - main
+      - master
+      - 'develop**'
 jobs:
 
   Build:
