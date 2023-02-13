@@ -16,7 +16,7 @@
 #define DEBOUNCE 5
 
 #define USE_SERIAL
-#define SOFT_SERIAL_PIN D2
+#define SOFT_SERIAL_PIN D3
 
 #define EE_HANDS
 
